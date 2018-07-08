@@ -28,7 +28,7 @@ function updateCanvas(){
 	//Turns the svg into canvas, allows export to png. Display: none in css
 	html2canvas(document.getElementsByClassName('svg')[0]).then(function(canvas){
 		document.body.appendChild(canvas);
-	})
+	});
 
     //Gives the canvas time to initialize before setting href
     //This usually takes between 100-180ms
