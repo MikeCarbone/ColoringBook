@@ -26,11 +26,12 @@ document.addEventListener("DOMContentLoaded", function(){
 function updateCanvas(){
 	
 	//Turns the svg into canvas, allows export to png. Display: none in css
-	html2canvas(document.getElementsByClassName('svg')[0]).then(function(canvas) {
-    document.body.appendChild(canvas);})
+	html2canvas(document.getElementsByClassName('svg')[0]).then(function(canvas){
+		document.body.appendChild(canvas);
+	})
 
     //Gives the canvas time to initialize before setting href
-	//This usually takes between 100-180ms
+    //This usually takes between 100-180ms
     setTimeout(function(){
     	let canvas = document.getElementsByTagName('canvas')[0];
 	 	const dl = document.getElementById('dl');
@@ -43,6 +44,8 @@ function updateCanvas(){
 	    	canvas.remove();
 	    }
 	}, 250);
+
+	return dl;
 }
 
 
