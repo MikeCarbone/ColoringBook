@@ -1,7 +1,10 @@
+/fonts
 /source
 /svg
+/trial
 *.pdf
 *.svg
 *.png
 *.jpg
 *.jpeg
+*.ai
