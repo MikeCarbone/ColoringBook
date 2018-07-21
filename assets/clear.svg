@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>clear</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="clear" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="Clear" font-family="Gaegu-Regular, Gaegu" font-size="100" font-weight="normal" fill="#000000">
+            <tspan x="43.25" y="167">Clear</tspan>
+        </text>
+        <path d="M211.251676,57.9139741 C177.129613,48.722622 92.1262346,49.3114007 65.3873078,57.9139741 C47.5613567,63.6490231 39.219094,75.3162018 40.3605198,92.9155101 C38.9776701,116.060998 34.8529348,132.940141 27.9863141,143.552938 C17.6863829,159.472133 11.5350009,188.509514 48.1698434,203.482722 C84.8046859,218.455929 95.220402,238.220662 155.330022,243.509816 C215.439642,248.79897 242.589715,235.377792 259.378788,221.380114 C276.167862,207.382437 291.559607,167.522881 277.150542,117.314103 C262.741478,67.1053262 245.37374,67.1053262 211.251676,57.9139741 Z" id="Path-46" stroke="#000000" stroke-width="7" fill-rule="nonzero"></path>
+    </g>
+</svg>
