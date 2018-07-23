@@ -5,6 +5,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 img, object{
     max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -109,7 +110,7 @@ h2{
         width: 768px;
         margin: 0 auto;
     }
-    
+
     /*______________________
     |_________TOOLS________*/
     .tools{
@@ -171,24 +172,24 @@ h2{
 |       DESKTOP        |
 |______________________|*/
 @media screen and (min-width: 1024px){
-    
+
     #heading{
         width: 100vw;
     }
     .main{
         width: 1024px;
     }
-    
+
     /*______________________
     |____COLORING SECTION___*/
-    
+
     #topCorner{
         margin-left: 32.5rem;
     }
     .page{
         width: 34.5rem;
     }
-    
+
     /*______________________
     |_________TOOLS________*/
     .tools{
@@ -209,24 +210,3 @@ h2{
         margin-left: 0;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
