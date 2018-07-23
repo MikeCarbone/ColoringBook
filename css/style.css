@@ -81,15 +81,26 @@ h1 {
 
 /*font-family: 'Nunito', sans-serif;
 font-family: 'Gaegu', cursive;*/	
+#hiddenExportCanvas{
+	/*display: none;*/
+}
 
 canvas{
-	display: none;
+	display: block;
+	margin: 0 auto;
 	max-height: 100%;
 	max-width: 100%;
 }
+
+.svg{
+	display: inline-block;
+}
+
 svg {
+	/*width: 3000px !important; 
+	height: 3000px !important;
 	max-width: 80vw;
-	max-height: 90vh;
+	max-height: 90vh;*/
 }			
 
 img {

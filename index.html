@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<html>
 <head>
-<title>Color Time</title>
-<!-- META -->
-<meta charset=utf-8>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- CSS -->
-<link rel="stylesheet" href="normalize.css">
-<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-<link rel="stylesheet" href="main.css">
+
+	<title>Color Time</title>
+	
+	<!-- META -->
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+
 </head>
 <body>
-
     <div class="top">
         <div class="logo">
             <h1>COLOR TIME</h1>
@@ -62,7 +63,7 @@
 
         <div class="tools">
             <div class="colorWheel">
-                <img src="assets/paintTEMP.png" alt="Color Wheel">
+                <img id="colorWheelImg" src="assets/paintTEMP.png" alt="Color Wheel">
             </div>
             <div class="buttons">
                 <object data="assets/eraser.svg" type="image/svg+xml" id="eraser">
@@ -74,10 +75,12 @@
                 <object data="assets/clear.svg" type="image/svg+xml" id="clear">
                     <img src="assets/clear.svg" alt="clear">
                 </object>
+                <a href="" id="dl" download>Download</a>
             </div>
         </div>
 
     </div>
-
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/html2canvas.min.js"></script>
 </body>
 </html>
