@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Getting all paths from the svg
 const paths = document.getElementsByTagName("path");
 let chosenColor;
