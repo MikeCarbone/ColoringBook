@@ -87,10 +87,23 @@ h2{
 /*______________________
 |_________TOOLS________*/
 .colorWheel{
-    display: none;
-    /* @Team -- How are we going to fit this in on mobile? */
+    /*THIS IS NOT VISIBLE ON THE PAGE! */
+    /*Only used to instance the canvas which is the next selector below*/
+    opacity: 0;
+    position: absolute;
+    /*------------/*
+
+    /*Use the width here to style the canvas!!*/ 
+    width: 60%;
 }
-#colorWheelImg:hover{
+
+#color-wheel-canvas{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#color-wheel-canvas:hover{
     cursor: crosshair;
 }
 
