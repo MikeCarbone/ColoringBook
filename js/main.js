@@ -81,7 +81,7 @@ function updateCanvas(){
     console.log('updating');
     
     var imgCanvas = new Promise(function(resolve, reject){
-    html2canvas(document.getElementsByClassName("svg")[0]).then(function(canvas){
+    html2canvas(document.getElementsByClassName("colorSvg")[0]).then(function(canvas){
         document.body.appendChild(canvas);
         canvas.classList.add('canvas-history');
 
@@ -98,7 +98,8 @@ function updateCanvas(){
     });
 
     imgCanvas.then(function(result) {
-        console.log(result);
+        console.log('Result: ', result);
+        console.log('Canvas: ', document.getElementsByClassName('canvas-history')[0]);
 
         let canvas = document.getElementsByClassName("canvas-history")[0];
         const dl = document.getElementById("dl");
@@ -112,7 +113,7 @@ function updateCanvas(){
         }
 
     }, function(err){
-        console.log(err);
+        console.log('Didnt work');
     });
 }
 
