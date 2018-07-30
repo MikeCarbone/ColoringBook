@@ -63,6 +63,9 @@ h2{
     width: 84vw;
     margin: 0 auto;
 }
+.page:hover{
+    cursor: url(assets/paintbrush.png), auto;
+}
 
 
 /*______________________
@@ -98,6 +101,10 @@ h2{
     display: block;
     margin: 0 auto;
     width: 80%;
+}
+
+#color-wheel-canvas:hover{
+    cursor: crosshair;
 }
 
 .buttons{
@@ -176,6 +183,9 @@ h2{
     }
     .page{
         width: 26.25rem;
+    }
+    .page:hover{
+        cursor: url(assets/paintbrush.png), auto;
     }
 
     /*______________________
