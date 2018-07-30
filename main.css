@@ -63,6 +63,9 @@ h2{
     width: 84vw;
     margin: 0 auto;
 }
+.page:hover{
+    cursor: url(assets/paintbrush.png), auto;
+}
 
 
 /*______________________
@@ -87,6 +90,10 @@ h2{
     display: none;
     /* @Team -- How are we going to fit this in on mobile? */
 }
+#colorWheelImg:hover{
+    cursor: crosshair;
+}
+
 .buttons{
     margin: 2vw auto;
     width: 60vw;
@@ -163,6 +170,9 @@ h2{
     }
     .page{
         width: 26.25rem;
+    }
+    .page:hover{
+        cursor: url(assets/paintbrush.png), auto;
     }
 
     /*______________________
