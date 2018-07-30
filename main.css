@@ -25,6 +25,19 @@ h2{
     height: 30.625vw; */
 }
 .heading{ display: none; }
+.spacing {
+    margin-bottom: 5%;
+}
+.words {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    /*margin-top: 5%;*/
+}
+.words > * {
+    margin-right: 5%;
+}
 
 /*______________________
 |____CORNER THINGIES____*/
@@ -103,6 +116,7 @@ h2{
     }
     .heading{
         display: block;
+        position: absolute;
     }
     .main{
         display: flex;
