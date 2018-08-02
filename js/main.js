@@ -1,6 +1,66 @@
 //Getting all paths from the svg
-const paths = document.getElementsByTagName("path");
-let chosenColor;
+const paths = document.getElementsByClassName("colorSvg")[0].getElementsByTagName("path");
+let chosenColor = '1074B0'; //Default color
+const clearButton = document.getElementById("clear").children[0];
+const eraserButton = document.getElementById("eraser");
+const backButton = document.getElementById("back");
+let priorMoves = [];
+let backCount = 0;
+
+
+function initializeButtons(){
+    backButton.addEventListener("click", function(){
+        console.log('Undoing...');
+        priorMoves[backCount].el.style.fill = priorMoves[backCount].fill;
+        backCount += 1;
+        updateCanvas();
+    });
+
+    eraserButton.addEventListener("click", function(){
+        chosenColor = "#FFFFFF";
+    });
+
+    clearButton.addEventListener("click", function(){
+        for (const value of paths){
+            if (value.getAttribute('fill') == '#FFFFFF') {
+                value.style.fill = '#FFFFFF';
+            }
+        }
+        updateCanvas();
+        console.log('Canvas cleared!');
+    });
+}
+
+
+//Listens for a click on each path
+for (const value of paths){
+    value.addEventListener("click", function(){
+        //Makes sure the path isnt an outline
+        if (value.getAttribute('fill') == '#FFFFFF') {
+            setUndo(this);
+            this.style.fill = chosenColor;
+            updateCanvas();
+            backCount = 0;
+        } else {
+            console.log('Clicked an outline!');
+        }
+    });
+}
+
+function setUndo(el){
+    let lastMove = new Object();
+    lastMove.el = el;
+    lastMove.fill = el.style.fill;
+    
+    //Adding last move to an array of past actions
+    priorMoves.push(lastMove);
+    priorMoves.unshift(lastMove);
+
+    //Number sets length of history array. Limits how much memory app will take up
+    if (priorMoves[40]){
+        priorMoves.length = 40;
+    }
+}
 
 function instantiateWheel(){
     //Makes sure canvas for the color wheel is instantiated
@@ -23,7 +83,7 @@ function instantiateWheel(){
 
     //What to do after color wheel canvas is instantiated
     colorWheelCanvasInstantiation.then(function(result) {
-        console.log(result);
+        //console.log(result);
         document.getElementById("colorWheelImg").style.display = "none";
         document.getElementById("color-wheel-canvas").addEventListener("click", function(e){
             colorPick(e);
@@ -46,18 +106,32 @@ function colorPick(e){
     var colorWheelCanvas = document.getElementById("color-wheel-canvas");
     var context = colorWheelCanvas.getContext('2d');
    
+   //Works on windows but not Mac????
    //Gets the position of the area clicked on the canvas
-    if (e.pageX || e.pageY) { 
-      x = e.pageX;
-      y = e.pageY;
-    } else { 
-      x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
-      y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+    // if (e.pageX || e.pageY) { 
+    //   x = e.pageX;
+    //   y = e.pageY;
+    // } else { 
+    //   x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
+    //   y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+    // }
+
+    // x -= colorWheelCanvas.offsetLeft;
+    // y -= colorWheelCanvas.offsetTop;
+
+    function getMousePos( canvas, evt ) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+            x: Math.floor( ( evt.clientX - rect.left ) / ( rect.right - rect.left ) * canvas.width ),
+            y: Math.floor( ( evt.clientY - rect.top ) / ( rect.bottom - rect.top ) * canvas.height )
+        };
     }
 
-    x -= colorWheelCanvas.offsetLeft;
-    y -= colorWheelCanvas.offsetTop;
-    
+    var mousePos = getMousePos( colorWheelCanvas, e );
+
+    var x = mousePos.x;
+    var y = mousePos.y;
+
     //Gets image data on the position clicked
     var p = context.getImageData(x, y, 1, 1).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
@@ -67,18 +141,10 @@ function colorPick(e){
     console.log(`Chosen color: ${chosenColor} at X: ${x}, Y: ${y}`);
 }
 
-//Listens for a click on each path
-for (const value of paths){
-    value.addEventListener("click", function(){
-        this.style.fill = chosenColor;
-         updateCanvas();
-    });
-}
-
 //Updates the canvas when a color is changed
 //makes sure the img href is always up to date
 function updateCanvas(){
-    console.log('updating');
+    //console.log('updating');
     
     var imgCanvas = new Promise(function(resolve, reject){
     html2canvas(document.getElementsByClassName("colorSvg")[0]).then(function(canvas){
@@ -98,8 +164,8 @@ function updateCanvas(){
     });
 
     imgCanvas.then(function(result) {
-        console.log('Result: ', result);
-        console.log('Canvas: ', document.getElementsByClassName('canvas-history')[0]);
+        //console.log('Result: ', result);
+        //console.log('Canvas: ', document.getElementsByClassName('canvas-history')[0]);
 
         let canvas = document.getElementsByClassName("canvas-history")[0];
         const dl = document.getElementById("dl");
@@ -121,6 +187,7 @@ function updateCanvas(){
 document.addEventListener("DOMContentLoaded", function(){
     updateCanvas();
     instantiateWheel();
+    initializeButtons();
 });
 
 var slideIndex = 1;
