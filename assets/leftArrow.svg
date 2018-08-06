@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125px" height="129px" viewBox="0 0 125 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>left arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="left-arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M61.6646764,127.391419 L34.5095129,95.5828094 L17.9029196,80.1814414 C3.58450776,68.3873958 -0.530118068,58.9551971 5.55904211,51.8848452 C14.6927824,41.2793174 38.6412261,22.1221573 45.4602045,14.0352999 C50.0061902,8.64406171 54.3292813,4.52222124 58.4294778,1.66977853" id="Path-49" stroke="#000000" stroke-width="4" fill-rule="nonzero"></path>
+        <path d="M120.758543,124.129852 C105.061838,110.841653 93.460549,101.782676 85.954676,96.9529207 C74.6958664,89.7082877 68.817965,82.3123266 60.8087269,78.0416887 C52.7994889,73.7710509 39.8139462,64.6595072 58.2600434,52.1136124 C70.5574415,43.7496826 83.4123641,32.6549445 96.8248113,18.8293982 L106.888925,7.72828846" id="Path-50" stroke="#000000" stroke-width="4" fill-rule="nonzero"></path>
+    </g>
+</svg>

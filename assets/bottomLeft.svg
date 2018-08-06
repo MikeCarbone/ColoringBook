@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125px" height="129px" viewBox="0 0 125 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="bottom-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy" transform="translate(64.500000, 64.500000) scale(-1, -1) translate(-64.500000, -64.500000) translate(9.000000, 16.000000)" stroke="#000000">
+            <path d="M0,24.5525319 C110.909723,16.9374553 83.9675928,-9.66674599 87.4714477,97" id="Path-27"></path>
+            <path d="M16,0.422879355 C133.385621,6.26710735 110.33674,-25.9189429 106.950798,77" id="Path-28"></path>
+        </g>
+        <path d="M32.4855511,16.4911348 L32.4855511,81.1497397 C29.3799706,92.5926832 34.9976614,97.6203922 49.3386235,96.2328666 C70.8500666,94.1515782 107.953512,88.6455174 119.109532,88.6455174" id="Path-44" stroke="#000000" stroke-width="2" fill-rule="nonzero"></path>
+        <path d="M12.9088821,36.7362755 L9.6188505,93.3274351 C7.53276553,106.416921 11.4542041,112.961663 21.3831662,112.961663 C36.2766094,112.961663 81.3820921,109.998673 103.535844,112.961663" id="Path-45" stroke="#000000" stroke-width="2" fill-rule="nonzero"></path>
+    </g>
+</svg>

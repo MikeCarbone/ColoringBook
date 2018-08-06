@@ -1,0 +1,29 @@
+{
+  "name": "coloringbook",
+  "version": "0.0.1",
+  "description": "using taskrunners to optimize development of our coloring book project",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonology/ColoringBook.git"
+  },
+  "author": "Team Charlie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carbonology/ColoringBook/issues"
+  },
+  "homepage": "https://github.com/carbonology/ColoringBook#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1"
+  }
+}
