@@ -12,26 +12,26 @@ gulp.task('default', ['serve']);
 
 //process css files
 gulp.task('css', function () {
-  return gulp.src('css/src/*.css')
+  return gulp.src('src/css/*.css')
     .pipe(csso())
     .pipe(concat('main.css'))
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest('./build/css/'));
 });
 
 // process js files
 gulp.task('js', function () {
-  return gulp.src('js/src/*.js')
-    .pipe(minify())
+  return gulp.src('src/js/*.js')
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('./js/'));
+    .pipe(minify())
+    .pipe(gulp.dest('./build/js/'));
 });
 
 //refresh the browser when there's changes
-gulp.task('serve', ['css'], function() {
+gulp.task('serve', ['css', 'js'], function() {
     browserSync.init({
         server: "."
     });
-	gulp.watch('js/src/*.js', ['js']);
-	gulp.watch('css/src/*.css', ['css']);
-	gulp.watch('js/*.js','css/*.css').on('change', browserSync.reload);
+	gulp.watch('/src/js/**/*.js', ['js']);
+    gulp.watch('/src/css/**/*.css', ['css']);
+	gulp.watch(['/src/js/*.js','/src/css/**/*.css']).on('change', browserSync.reload);
 });

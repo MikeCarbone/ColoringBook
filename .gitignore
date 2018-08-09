@@ -4,6 +4,7 @@
 /trial
 /assests
 /node_modules
+/build
 
 *.pdf
 *.svg
