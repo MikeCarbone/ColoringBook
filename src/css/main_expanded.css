@@ -92,14 +92,13 @@ object {
     width: 50%;
     margin-bottom: 10vw;
     margin-top: 20vw;
-
 }
 
 
 #color-wheel-canvas {
-    display: block;
-    margin: 0 auto;
-    width: 80%
+    position: absolute;
+    width: 50%;
+    margin-bottom: 10vw;
 }
 
 #color-wheel-canvas:hover {
