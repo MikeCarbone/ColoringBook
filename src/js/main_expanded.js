@@ -99,7 +99,7 @@ function instantiateWheel(){
     //Makes sure canvas for the color wheel is instantiated
     var colorWheelCanvasInstantiation = new Promise(function(resolve, reject){
         html2canvas(document.getElementById("colorWheelImg")).then(function(canvas){
-            document.body.appendChild(canvas);
+            document.getElementsByClassName("tools")[0].appendChild(canvas);
             canvas.id = "color-wheel-canvas";
 
             return wasCanvasInstantiated(canvas);
