@@ -12,6 +12,8 @@
 *.jpeg
 *.ai
 
+!paintTEMP.png
+
 
 
 
