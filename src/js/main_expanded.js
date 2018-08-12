@@ -7,6 +7,25 @@ const backButton = document.getElementById("back");
 let priorMoves = [];
 let backCount = 0;
 
+var slideIndex = 1;
+showDivs(slideIndex);
+console.log(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("page");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
 
 function initializeButtons(){
     backButton.addEventListener("click", function(){
@@ -51,7 +70,7 @@ function setUndo(el){
     let lastMove = new Object();
     lastMove.el = el;
     lastMove.fill = el.style.fill;
-    
+
     //Adding last move to an array of past actions
     priorMoves.push(lastMove);
     priorMoves.unshift(lastMove);
@@ -78,7 +97,7 @@ function instantiateWheel(){
             } else {
                 reject(Error('Color wheel canvas did not instantiate. Try reloading the page.'));
             }
-        }  
+        }
     });
 
     //What to do after color wheel canvas is instantiated
@@ -95,7 +114,7 @@ function instantiateWheel(){
 }
 
 function colorPick(e){
-    
+
     //Converts the RGB data to hex from the page data
     function rgbToHex(r, g, b) {
         if (r > 255 || g > 255 || b > 255)
@@ -105,15 +124,15 @@ function colorPick(e){
 
     var colorWheelCanvas = document.getElementById("color-wheel-canvas");
     var context = colorWheelCanvas.getContext('2d');
-   
+
    //Works on windows but not Mac????
    //Gets the position of the area clicked on the canvas
-    // if (e.pageX || e.pageY) { 
+    // if (e.pageX || e.pageY) {
     //   x = e.pageX;
     //   y = e.pageY;
-    // } else { 
-    //   x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
-    //   y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+    // } else {
+    //   x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    //   y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
     // }
 
     // x -= colorWheelCanvas.offsetLeft;
@@ -135,7 +154,7 @@ function colorPick(e){
     //Gets image data on the position clicked
     var p = context.getImageData(x, y, 1, 1).data;
     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    
+
     //Sets the chosen color to the color clicked
     chosenColor = hex;
     console.log(`Chosen color: ${chosenColor} at X: ${x}, Y: ${y}`);
@@ -145,7 +164,7 @@ function colorPick(e){
 //makes sure the img href is always up to date
 function updateCanvas(){
     //console.log('updating');
-    
+
     var imgCanvas = new Promise(function(resolve, reject){
     html2canvas(document.getElementsByClassName("colorSvg")[0]).then(function(canvas){
         document.body.appendChild(canvas);
@@ -153,14 +172,14 @@ function updateCanvas(){
 
         return wasCanvasInstantiated(canvas);
     });
-    
+
     function wasCanvasInstantiated(canvas){
         if (canvas){
                 resolve('Sketch canvas instantiated!');
             } else {
                 reject(Error('Sketch canvas did not instantiate. Try reloading the page.'));
             }
-        }  
+        }
     });
 
     imgCanvas.then(function(result) {
@@ -189,22 +208,3 @@ document.addEventListener("DOMContentLoaded", function(){
     instantiateWheel();
     initializeButtons();
 });
-
-var slideIndex = 1;
-showDivs(slideIndex);
-console.log(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("gallery_images");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}

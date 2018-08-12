@@ -15,7 +15,7 @@ img, object{
 |______________________|*/
 h2{
     font-family: 'Gaegu', cursive;
-    font-size: 1rem;
+    font-size: 2.8rem;
     margin: 0;
 }
 
@@ -64,7 +64,7 @@ h2{
     margin: 0 auto;
 }
 .page:hover{
-    cursor: url(assets/paintbrush.png), auto;
+    cursor: url(./assets/paintbrush.png), auto;
 }
 
 
@@ -92,7 +92,7 @@ h2{
     opacity: 0;
     position: absolute;
     /*------------/*
-    /*Use the width here to style the canvas!!*/ 
+    /*Use the width here to style the canvas!!*/
     width: 60%;
 }
 
@@ -184,7 +184,7 @@ h2{
         width: 26.25rem;
     }
     .page:hover{
-        cursor: url(assets/paintbrush.png), auto;
+        cursor: url(./assets/paintbrush.png), auto;
     }
 
     /*______________________
