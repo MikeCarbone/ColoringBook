@@ -1,248 +1,396 @@
-body{
-background-color: #ffffff;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2378e7ff' fill-opacity='0.75'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+body {
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2378e7ff' fill-opacity='0.75'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    width: 96vw;
 }
 
-img, object{
-    max-width: 100%;
+img,
+object, svg {
     width: 100%;
-    height: auto;
+    height: auto
 }
 
-/*_____________________
-|                      |
-|       MOBILE         |
-|______________________|*/
-h2{
+h2 {
     font-family: 'Gaegu', cursive;
-    font-size: 2.8rem;
-    margin: 0;
+    font-size: 1rem;
+    margin: 0
 }
 
-.logo{
-    margin: 0 auto;
-    /* width: 48.4vw;
-    height: 30.625vw; */
+.logo {
+    margin: 0 auto
 }
-.heading{ display: none; }
+
+.heading {
+    display: none
+}
+
 .spacing {
-    margin-bottom: 5%;
+    margin-bottom: 5%
 }
+
 .words {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: relative;
-    /*margin-top: 5%;*/
-}
-.words > * {
-    margin-right: 5%;
+    position: relative
 }
 
-/*______________________
-|____CORNER THINGIES____*/
-.corner{
+.words > * {
+    margin-right: 5%
+}
+
+.corner {
     margin: 0;
     border: 0;
     padding: 0;
     width: 10vw;
-    position: absolute;
+    position: absolute
 }
-.corner object{
-    max-width: 100%;
+
+.corner object,
+img,
+object {
+    max-width: 100%
 }
-#topCorner{
+
+#topCorner {
     margin-left: 85vw;
-    margin-top: -6vw;
-}
-#bottomCorner{
-    margin-top: -5vw;
+    margin-top: -6vw
 }
 
-.page{
+#bottomCorner {
+    margin-top: -5vw
+}
+
+.page {
     width: 84vw;
-    margin: 0 auto;
-}
-.page:hover{
-    cursor: url(./assets/paintbrush.png), auto;
+    margin: 0 auto
 }
 
+.page:hover {
+    cursor: url(assets/paintbrush.png), auto
+}
 
-/*______________________
-|______MORE PAGES_______*/
-.morePages{
-    margin: 3vw auto 0 auto;
+.morePages {
+    margin: 3vw auto 0;
     width: 64vw;
     display: flex;
-    flex-flow: row;
+    flex-flow: row
 }
-.arrow{
-    width: 6vw;
+
+.arrow {
+    width: 6vw
 }
-.morePics{
+
+.morePics {
     width: 50vw;
-    text-align: center;
+    text-align: center
 }
 
-/*______________________
-|_________TOOLS________*/
-.colorWheel{
-    /*THIS IS NOT VISIBLE ON THE PAGE! */
-    /*Only used to instance the canvas which is the next selector below*/
-    opacity: 0;
+.colorWheel img{
     position: absolute;
-    /*------------/*
-    /*Use the width here to style the canvas!!*/
-    width: 60%;
+    width: 50%;
+    margin-bottom: 10vw;
+    margin-top: 20vw;
+
 }
 
-#color-wheel-canvas{
+
+#color-wheel-canvas {
     display: block;
     margin: 0 auto;
-    width: 80%;
+    width: 80%
 }
 
-#color-wheel-canvas:hover{
-    cursor: crosshair;
+#color-wheel-canvas:hover {
+    cursor: crosshair
 }
-
-.buttons{
+.tools{
+    margin: 0 auto;
+    width: 50%;
+}
+.buttons {
     margin: 2vw auto;
-    width: 60vw;
+    width: 50vw;
     display: flex;
-    flex-flow: row;
-}
-.buttons object{
-    width: 16vw;
-    height: 16vw;
-    margin-left: 2vw;
+    flex-flow: row
 }
 
+.buttons object {
+    width: 12vw;
+    height: 12vw;
+    margin-left: 10vw
+}
 
-
-
-/*_____________________
-|                      |
-|       TABLET         |
-|______________________|*/
-@media screen and (min-width: 768px){
-
-    h1{
-        font-size: 3.375rem;
+@media screen and (min-width:768px) {
+    h1 {
+        font-size: 3.375rem
     }
-    h2{
-        font-size: 2rem;
+    h2 {
+        font-size: 2rem
     }
-    .heading{
+    .heading {
         display: block;
-        position: absolute;
+        position: absolute
     }
-    .main{
+    .main {
         display: flex;
         flex-flow: row-reverse;
         width: 768px;
-        margin: 0 auto;
+        margin: 0 auto
     }
-
-    /*______________________
-    |_________TOOLS________*/
-    .tools{
+    .tools {
         width: 16.5rem;
-        margin-top: 7rem;
+        margin-top: 7rem
     }
-    .colorWheel{
+    .colorWheel {
         display: block;
         width: 16.25rem;
         margin: 0 auto;
     }
-    .buttons{
-        width: 14.375rem;
+    .colorWheel img{
+        width: 16.5rem;
+/*        margin-left: 1rem;*/
     }
-    .buttons object{
+    .buttons {
+        width: 14.375rem
+    }
+    .buttons object {
         width: 3.625rem;
-        height: 3.625rem;
+        height: 3.625rem
     }
-
-    /*______________________
-    |____COLORING SECTION___*/
-    .pageGroup{
-        margin: 2.2rem;
-        margin-left: 1.6rem;
+    .pageGroup {
+        margin: 2.2rem 2.2rem 2.2rem 1.6rem
     }
-    .corner{
-        width: 3.5rem;
+    .corner {
+        width: 3.5rem
     }
-    #topCorner{
+    #topCorner {
         margin-left: 24.5rem;
-        margin-top: -1.8rem;
+        margin-top: -1.8rem
     }
-    #bottomCorner{
+    #bottomCorner {
         margin-top: -2.3rem;
-        margin-left: -1.4rem;
+        margin-left: -1.4rem
     }
-    .page{
-        width: 26.25rem;
+    .page {
+        width: 26.25rem
     }
-    .page:hover{
-        cursor: url(./assets/paintbrush.png), auto;
+    .page:hover {
+        cursor: url(assets/paintbrush.png), auto
     }
-
-    /*______________________
-    |______MORE PAGES_______*/
-    .morePages{
+    .morePages {
         width: 25rem;
-        margin-top: 2rem;
+        margin-top: 2rem
     }
-    .arrow{
-        width: 2.25rem;
+    .arrow {
+        width: 2.25rem
     }
-    .morePics{
-        width: 20rem;
+    .morePics {
+        width: 20rem
     }
-
 }
 
-
-/*_____________________
-|                      |
-|       DESKTOP        |
-|______________________|*/
-@media screen and (min-width: 1024px){
-
-    #heading{
-        width: 100vw;
+@media screen and (min-width:1024px) {
+    #heading {
+        width: 100vw
     }
-    .main{
-        width: 1024px;
+    .main {
+        width: 1024px
     }
-
-    /*______________________
-    |____COLORING SECTION___*/
-
-    #topCorner{
-        margin-left: 32.5rem;
+    #topCorner {
+        margin-left: 32.5rem
     }
-    .page{
-        width: 34.5rem;
+    .page {
+        width: 34.5rem
     }
-
-    /*______________________
-    |_________TOOLS________*/
-    .tools{
-        width: 20.25rem;
-        margin-right: 2rem;
+    .tools {
+        margin-right: 2rem
     }
-    .colorWheel{
-        width: 20.25rem;
+    .colorWheel,
+    .tools {
+        width: 20.25rem
     }
-    .buttons{
-        width: 15rem;
+    .colorWheel img{
+        margin-left: 1rem;
     }
-    .buttons object{
+    .buttons {
+        width: 15rem
+    }
+    .buttons object {
         width: 4rem;
-        height: 4rem;
+        height: 4rem
     }
-    #eraser{
-        margin-left: 0;
+    #eraser {
+        margin-left: 0
     }
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio],
+legend {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+[hidden],
+template {
+    display: none
 }

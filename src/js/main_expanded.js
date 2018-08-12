@@ -1,11 +1,13 @@
 //Getting all paths from the svg
-const paths = document.getElementsByClassName("colorSvg")[0].getElementsByTagName("path");
+let paths = document.getElementsByClassName("cycle-js")[0].getElementsByTagName("path");
 let chosenColor = '1074B0'; //Default color
 const clearButton = document.getElementById("clear").children[0];
 const eraserButton = document.getElementById("eraser");
 const backButton = document.getElementById("back");
 let priorMoves = [];
 let backCount = 0;
+
+console.log('THISISIA: ', document.getElementsByClassName("colorSvg")[0].getElementsByTagName("path"));
 
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -17,13 +19,19 @@ function plusDivs(n) {
 
 function showDivs(n) {
   var i;
-  var x = document.getElementsByClassName("page");
+  var x = document.getElementsByClassName("cycle-js");
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
   x[slideIndex-1].style.display = "block";
+  //console.log('SLIDE INDEX: ', slideIndex);
+  console.log(x);
+  let j = slideIndex - 1;
+  //console.log('J: ', j);
+    
+  setEventListeners(j);
 }
 
 
@@ -50,21 +58,27 @@ function initializeButtons(){
     });
 }
 
+function setEventListeners(j){
+    //console.log(j);
+    paths = document.getElementsByClassName("cycle-js")[j].getElementsByTagName("path");
+   // console.log(paths);
 
-//Listens for a click on each path
-for (const value of paths){
-    value.addEventListener("click", function(){
-        //Makes sure the path isnt an outline
-        if (value.getAttribute('fill') == '#FFFFFF') {
-            setUndo(this);
-            this.style.fill = chosenColor;
-            updateCanvas();
-            backCount = 0;
-        } else {
-            console.log('Clicked an outline!');
-        }
-    });
+    //Listens for a click on each path
+    for (let value of paths){
+        value.addEventListener("click", function(){
+            //Makes sure the path isnt an outline
+            if (value.getAttribute('fill') == '#FFFFFF') {
+                setUndo(this);
+                this.style.fill = chosenColor;
+                updateCanvas();
+                backCount = 0;
+            } else {
+                console.log('Clicked an outline!');
+            }
+        });
+    }
 }
+
 
 function setUndo(el){
     let lastMove = new Object();
