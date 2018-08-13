@@ -31,7 +31,7 @@ gulp.task('serve', ['css', 'js'], function() {
     browserSync.init({
         server: "."
     });
-	gulp.watch('/src/js/**/*.js', ['js']);
-    gulp.watch('/src/css/**/*.css', ['css']);
-	gulp.watch(['/src/js/*.js','/src/css/**/*.css']).on('change', browserSync.reload);
+	gulp.watch('./src/js/**/*.js', ['js']);
+    gulp.watch('./src/css/**/*.css', ['css']);
+	gulp.watch(['./src/js/*.js','./src/css/*.css']).on('change', browserSync.reload);
 });
