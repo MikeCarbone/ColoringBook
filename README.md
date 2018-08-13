@@ -1,6 +1,6 @@
 # Color Time
 
-View this live: {url}
+View this live: [http://hannahmystic.com/colortime/index.html](http://hannahmystic.com/colortime/index.html)
 
 ## Want to run this locally?
 
