@@ -4,10 +4,8 @@ View this live: [http://hannahmystic.com/colortime/index.html](http://hannahmyst
 
 ## Want to run this locally?
 
-1. Download the zip folder.
-2. Unzip the folder. 
-3. Navigate to this specific folder through your terminal.
-4. Type "npm install"
-5. Type "gulp" 
+1. Clone the repository
+2. Type "npm install"
+3. Type "gulp" 
 
 That's it! Your browser should automatically open with this website running. 
