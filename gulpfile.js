@@ -26,18 +26,23 @@ gulp.task('js', function () {
     .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('copy', function() {
-    return gulp.src('./src/index.html', './src/assets/')
+gulp.task('html', function() {
+    return gulp.src('./src/index.html')
     .pipe(gulp.dest('./build/'))
 
 });
 
+gulp.task('copy_assets', function() {
+    return gulp.src('./src/assets/*')
+    .pipe(gulp.dest('./build/assets/'))
+});
+
 //refresh the browser when there's changes
-gulp.task('serve', ['css', 'js', 'copy'], function() {
+gulp.task('serve', ['css', 'js', 'html', 'copy_assets'], function() {
     browserSync.init({
         server: "./build/"
     });
-	gulp.watch('./src/js/*.js', ['js']);
+    gulp.watch('./src/js/*.js', ['js']);
     gulp.watch('./src/css/*.css', ['css']);
-	gulp.watch(['./src/js/*.js','./src/css/*.css', './src/index.html']).on('change', browserSync.reload);
+    gulp.watch(['./src/js/*.js','./src/css/*.css', './src/index.html']).on('change', browserSync.reload);
 });
