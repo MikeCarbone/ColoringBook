@@ -26,14 +26,14 @@ gulp.task('js', function () {
     .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('html', function() {
-    return gulp.src('./src/index.html')
+gulp.task('copy', function() {
+    return gulp.src('./src/index.html', './src/assets/')
     .pipe(gulp.dest('./build/'))
 
 });
 
 //refresh the browser when there's changes
-gulp.task('serve', ['css', 'js', 'html'], function() {
+gulp.task('serve', ['css', 'js', 'copy'], function() {
     browserSync.init({
         server: "./build/"
     });
