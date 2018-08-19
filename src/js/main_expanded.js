@@ -6,15 +6,21 @@ const eraserButton = document.getElementById("eraser");
 const backButton = document.getElementById("back");
 let priorMoves = [];
 let backCount = 0;
-
-console.log('THISISIA: ', document.getElementsByClassName("colorSvg")[0].getElementsByTagName("path"));
-
+var backArrow = document.getElementsByClassName("arrow")[0];
+var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
+let colorDisplay = document.getElementById("pickedColor");
+
+
+
+
+
 showDivs(slideIndex);
-console.log(slideIndex);
+//console.log(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+    console.log('plus divs added');
+    showDivs(slideIndex += n);
 }
 
 function showDivs(n) {
@@ -27,7 +33,7 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
   //console.log('SLIDE INDEX: ', slideIndex);
-  console.log(x);
+  //console.log(x);
   let j = slideIndex - 1;
   //console.log('J: ', j);
     
@@ -56,6 +62,15 @@ function initializeButtons(){
         updateCanvas();
         console.log('Canvas cleared!');
     });
+    
+    // console.log('BackArrow: ', backArrow);
+    // console.log('forwardArrow: ', forwardArrow);
+    // backArrow.addEventListener("click", function(){
+    //     console.log('hello');
+    //     plusDivs(-1);
+    // });
+    
+    // forwardArrow.addEventListener("click", function(){plusDivs(1)});
 }
 
 function setEventListeners(j){
@@ -172,6 +187,8 @@ function colorPick(e){
     //Sets the chosen color to the color clicked
     chosenColor = hex;
     console.log(`Chosen color: ${chosenColor} at X: ${x}, Y: ${y}`);
+
+    colorDisplay.style.backgroundColor = chosenColor;
 }
 
 //Updates the canvas when a color is changed

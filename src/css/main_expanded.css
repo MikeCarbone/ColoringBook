@@ -4,6 +4,7 @@ body {
     width: 96vw;
 }
 
+img,
 object, svg {
     width: 100%;
     height: auto
@@ -12,38 +13,7 @@ object, svg {
 h2 {
     font-family: 'Gaegu', cursive;
     font-size: 1rem;
-    margin: 0;
-    text-decoration: none;
-}
-
-.words h2 a {
-  color: #000000;
-  transition: color 1s ease-in-out;
-	-moz-transition: color 1s ease-in-out;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.words h2 a:hover {
-  -webkit-animation: zomg 4s infinite;
-  animation: zomg 4s infinite;
-}
-
-@-webkit-keyframes zomg {
-  0%, 100% { color: #7ccdea; }
-  16%      { color: #0074d9; }
-  32%      { color: #2ecc40; }
-  48%      { color: #ffdc00; }
-  64%      { color: #b10dc9; }
-  80%      { color: #ff4136; }
-}
-@keyframes zomg {
-  0%, 100% { color: #7ccdea; }
-  16%      { color: #0074d9; }
-  32%      { color: #2ecc40; }
-  48%      { color: #ffdc00; }
-  64%      { color: #b10dc9; }
-  80%      { color: #ff4136; }
+    margin: 0
 }
 
 .logo {
@@ -62,13 +32,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: relative;
-    font-size: 1.5em;
-}
-
-.words h2 {
-    
-    font-size: 1.5em;
+    position: relative
 }
 
 .words > * {
@@ -80,11 +44,11 @@ h2 {
     border: 0;
     padding: 0;
     width: 10vw;
-    position: absolute;
+    position: absolute
 }
 
 .corner object,
-/*img,*/
+img,
 object {
     max-width: 100%
 }
@@ -100,12 +64,11 @@ object {
 
 .page {
     width: 84vw;
-    margin: 0 auto;
-    cursor: url(../assets/paintbrush.svg), auto;
+    margin: 0 auto
 }
 
 .page:hover {
-    cursor: url(../assets/paintbrush.svg), auto;
+    cursor: url(assets/paintbrush.png), auto
 }
 
 .morePages {
@@ -129,11 +92,12 @@ object {
     width: 50%;
     margin-bottom: 10vw;
     margin-top: 20vw;
+
 }
 
 
 #color-wheel-canvas {
-    position: absolute;
+   position: absolute;
     width: 50%;
     margin-bottom: 10vw;
 }
@@ -168,13 +132,6 @@ object {
     .heading {
         display: block;
         position: absolute
-    }
-    
-    .words h2 {
-    
-    font-size: 1.5em;
-    margin-top: -0.8em;
-    
     }
     .main {
         display: flex;
@@ -220,7 +177,7 @@ object {
         width: 26.25rem
     }
     .page:hover {
-        cursor: url(../assets/paintbrush.svg), auto;
+        cursor: url(assets/paintbrush.png), auto
     }
     .morePages {
         width: 25rem;
@@ -231,6 +188,14 @@ object {
     }
     .morePics {
         width: 20rem
+    }
+    #pickedColor{
+        background-color: #1074B0;
+        border: 3px solid black;
+        border-radius: 25px;
+        height: 75px;
+        margin: 25px auto;
+        width: 75px;
     }
 }
 
@@ -258,21 +223,14 @@ object {
         margin-left: 1rem;
     }
     .buttons {
-        width: 15rem;
-        cursor: pointer;
+        width: 15rem
     }
     .buttons object {
         width: 4rem;
         height: 4rem
     }
     #eraser {
-        margin-left: 0;
-        cursor: pointer;
-    }
-    
-    #back, #clear {
-        
-        cursor: pointer;
+        margin-left: 0
     }
 }
 
