@@ -71,6 +71,7 @@ function initializeButtons(){
 
     eraserButton.addEventListener("click", function(){
         chosenColor = "#FFFFFF";
+        colorDisplay.style.backgroundColor = chosenColor;
     });
 
     clearButton.addEventListener("click", function(){
