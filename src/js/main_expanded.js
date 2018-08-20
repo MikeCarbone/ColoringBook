@@ -11,9 +11,26 @@ var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
 let colorDisplay = document.getElementById("pickedColor");
 
+let artists;
 
-
-
+artists = [
+    "Christina An",
+    "Stephen Brennan",
+    "John Davalos",
+    "Angela Filtz",
+    "Travis Hove",
+    "Maxime Lewing",
+    "Fiona Lynch",
+    "Sara Meixner",
+    "Elijah Rizzuto Smith",
+    "Julia Schultz",
+    "Ben Spurr",
+    "Anthony Srnka",
+    "Clay Tercek",
+    "Michael Toone",
+    "Ciaran Wagner",
+    "Lindsey Wolfe"
+];
 
 showDivs(slideIndex);
 //console.log(slideIndex);
@@ -26,16 +43,19 @@ function plusDivs(n) {
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("cycle-js");
+  
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
   x[slideIndex-1].style.display = "block";
+  document.getElementById("artistName").innerHTML = artists[slideIndex-1];
   //console.log('SLIDE INDEX: ', slideIndex);
   //console.log(x);
   let j = slideIndex - 1;
   //console.log('J: ', j);
+
     
   setEventListeners(j);
 }
