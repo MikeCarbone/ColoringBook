@@ -6,30 +6,56 @@ const eraserButton = document.getElementById("eraser");
 const backButton = document.getElementById("back");
 let priorMoves = [];
 let backCount = 0;
-
-console.log('THISISIA: ', document.getElementsByClassName("colorSvg")[0].getElementsByTagName("path"));
-
+var backArrow = document.getElementsByClassName("arrow")[0];
+var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
+let colorDisplay = document.getElementById("pickedColor");
+
+let artists;
+
+artists = [
+    "Christina An",
+    "Stephen Brennan",
+    "John Davalos",
+    "Angela Filtz",
+    "Travis Hove",
+    "Maxime Lewing",
+    "Fiona Lynch",
+    "Sara Meixner",
+    "Elijah Rizzuto Smith",
+    "Julia Schultz",
+    "Ben Spurr",
+    "Anthony Srnka",
+    "Clay Tercek",
+    "Michael Toone",
+    "Ciaran Wagner",
+    "Lindsey Wolfe"
+];
+
 showDivs(slideIndex);
-console.log(slideIndex);
+//console.log(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+    console.log('plus divs added');
+    showDivs(slideIndex += n);
 }
 
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("cycle-js");
+  
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
   x[slideIndex-1].style.display = "block";
+  document.getElementById("artistName").innerHTML = artists[slideIndex-1];
   //console.log('SLIDE INDEX: ', slideIndex);
-  console.log(x);
+  //console.log(x);
   let j = slideIndex - 1;
   //console.log('J: ', j);
+
     
   setEventListeners(j);
 }
@@ -56,6 +82,15 @@ function initializeButtons(){
         updateCanvas();
         console.log('Canvas cleared!');
     });
+    
+    // console.log('BackArrow: ', backArrow);
+    // console.log('forwardArrow: ', forwardArrow);
+    // backArrow.addEventListener("click", function(){
+    //     console.log('hello');
+    //     plusDivs(-1);
+    // });
+    
+    // forwardArrow.addEventListener("click", function(){plusDivs(1)});
 }
 
 function setEventListeners(j){
@@ -96,22 +131,20 @@ function setUndo(el){
 }
 
 function instantiateWheel(){
+    let wheelCanvas;
+    
     //Makes sure canvas for the color wheel is instantiated
-    var colorWheelCanvasInstantiation = new Promise(function(resolve, reject){
-        html2canvas(document.getElementById("colorWheelImg")).then(function(canvas){
-            document.getElementsByClassName("tools")[0].appendChild(canvas);
-            canvas.id = "color-wheel-canvas";
+    var colorWheelCanvasInstantiation = new Promise((resolve, reject) =>{
+        var c = document.getElementById("color-wheel-canvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("colorWheelImg");
+        var rect = img.getBoundingClientRect();
+        c.width = rect.width;
+        c.height = rect.height;
+        
+        ctx.drawImage(img,0,0, rect.width, rect.height);
 
-            return wasCanvasInstantiated(canvas);
-    });
-
-    function wasCanvasInstantiated(canvas){
-        if (canvas){
-                resolve('Color wheel canvas instantiated!');
-            } else {
-                reject(Error('Color wheel canvas did not instantiate. Try reloading the page.'));
-            }
-        }
+        return resolve(c);
     });
 
     //What to do after color wheel canvas is instantiated
@@ -139,19 +172,6 @@ function colorPick(e){
     var colorWheelCanvas = document.getElementById("color-wheel-canvas");
     var context = colorWheelCanvas.getContext('2d');
 
-   //Works on windows but not Mac????
-   //Gets the position of the area clicked on the canvas
-    // if (e.pageX || e.pageY) {
-    //   x = e.pageX;
-    //   y = e.pageY;
-    // } else {
-    //   x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    //   y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    // }
-
-    // x -= colorWheelCanvas.offsetLeft;
-    // y -= colorWheelCanvas.offsetTop;
-
     function getMousePos( canvas, evt ) {
         var rect = canvas.getBoundingClientRect();
         return {
@@ -172,48 +192,62 @@ function colorPick(e){
     //Sets the chosen color to the color clicked
     chosenColor = hex;
     console.log(`Chosen color: ${chosenColor} at X: ${x}, Y: ${y}`);
+
+    colorDisplay.style.backgroundColor = chosenColor;
 }
 
 //Updates the canvas when a color is changed
-//makes sure the img href is always up to date
 function updateCanvas(){
-    //console.log('updating');
+    createImg();
 
-    var imgCanvas = new Promise(function(resolve, reject){
-    html2canvas(document.getElementsByClassName("colorSvg")[0]).then(function(canvas){
-        document.body.appendChild(canvas);
-        canvas.classList.add('canvas-history');
+    function createImg(){
+        var svg = document.getElementsByClassName("colorSvg")[0].children[0];
+        var wrap = document.createElement("div");
+        var img = new Image();
+        var data;
 
-        return wasCanvasInstantiated(canvas);
-    });
+        wrap.appendChild(svg.cloneNode(true));
+        data = "data:image/svg+xml;base64," + window.btoa(wrap.innerHTML);
+        img.src = data;
 
-    function wasCanvasInstantiated(canvas){
-        if (canvas){
-                resolve('Sketch canvas instantiated!');
-            } else {
-                reject(Error('Sketch canvas did not instantiate. Try reloading the page.'));
-            }
+        return setTimeout(function(){drawHistoryCanvas(svg, img)}, 100);
+    }
+    
+    //Draws new history canvas
+    function drawHistoryCanvas(svg, img){
+
+        let c = document.createElement('canvas');
+        let ctx = c.getContext("2d");
+        let rect = svg.getBoundingClientRect();
+        
+        document.body.appendChild(c);
+
+        c.classList.add('canvas-history');
+        c.setAttribute('viewbox', '0 0 ' + rect.width + ' ' + rect.height);
+        c.setAttribute('width', rect.width);
+        c.setAttribute('height', rect.height);
+
+        ctx.drawImage(img, 0, 0, rect.width, rect.height);
+       
+        return setLink(c);
+    }
+
+    //Makes sure the img href is always up to date
+    function setLink(canvas){
+        
+        //Removes duplicate canvases so the first one is always up to date
+        let latestCanvasHistory = document.getElementsByClassName("canvas-history")[0];
+        if (latestCanvasHistory){
+            latestCanvasHistory.remove();
         }
-    });
-
-    imgCanvas.then(function(result) {
-        //console.log('Result: ', result);
-        //console.log('Canvas: ', document.getElementsByClassName('canvas-history')[0]);
-
-        let canvas = document.getElementsByClassName("canvas-history")[0];
-        const dl = document.getElementById("dl");
 
         //Sets the download link to the updated img
-        dl.href = canvas.toDataURL("image/png");
+        let dl = document.getElementById("dl");
+        dl.setAttribute('href', '');
+        dl.href = document.getElementsByClassName("canvas-history")[0].toDataURL("image/png");
 
-        //Removes duplicate canvases so the first one is always up to date
-        if (canvas){
-            canvas.remove();
-        }
-    },
-    function(err){
-        console.log('Didnt work');
-    });
+        return;
+    }
 }
 
 //Prepares the download link after site is loaded
