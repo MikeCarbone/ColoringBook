@@ -95,7 +95,6 @@ object {
 
 }
 
-
 #color-wheel-canvas {
    position: absolute;
     width: 50%;
@@ -120,6 +119,14 @@ object {
     width: 12vw;
     height: 12vw;
     margin-left: 10vw
+}
+
+.canvas-history{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }
 
 @media screen and (min-width:768px) {
@@ -151,6 +158,10 @@ object {
     .colorWheel img{
         width: 16.5rem;
 /*        margin-left: 1rem;*/
+    }
+
+    #color-wheel-canvas {
+        width: 25%;
     }
     .buttons {
         width: 14.375rem
@@ -231,6 +242,9 @@ object {
     }
     #eraser {
         margin-left: 0
+    }
+    #color-wheel-canvas {
+        width: 25%;
     }
 }
 
