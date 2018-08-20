@@ -2,39 +2,40 @@
 <html lang="en">
 <head>
 
-	<title>Color Time</title>
+    <title>Color Time</title>
 
-	<!-- META -->
-	<meta charset=utf-8>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- META -->
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-	<link rel="stylesheet" href="./css/main.css">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
 
 </head>
+
 <body>
     <div class="top">
         <div class="logo">
-<!--             <h1>COLOR TIME</h1> -->
-        <img src="./assets/title.svg" alt="">
+            <!--             <h1>COLOR TIME</h1> -->
+            <img src="./assets/title.svg" alt="Color Time" id="logoTitle">
         </div>
         <div class="heading">
             <object data="./assets/heading.svg" type="image/svg+xml" id="heading">
-                <img src="./assets/heading.svg" alt="heading">
+                <img src="./assets/heading.svg" alt="heading" id="headingSVG">
             </object>
-
+            
         </div>
         <div class="spacing"></div>
         <div class="words">
-        	<h2>print</h2>
+            <h2>print</h2>
             <h2><a href="" id="dl" download="Coloring-Book-Img">save</a></h2>
             <h2>share</h2>
         </div>
     </div>
-	<div class="spacing"></div>
+    <div class="spacing"></div>
     <div class="main">
-      <div class = "pageGroup">
+        <div class="pageGroup">
             <div class="picBorder">
                 <div class="corner" id="topCorner">
                     <object data="./assets/topRight.svg" type="image/svg+xml" class="cornerImage">
@@ -42,8 +43,8 @@
                     </object>
                 </div>
                 <div class="page">
-                        <div class="colorSvg">
-                            <svg class="cycle-js" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" width="559" height="727">
+                    <div class="colorSvg">
+                        <svg class="cycle-js" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" width="559" height="727">
                                 <g>
                                     <g>
                                         <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1,601c0-48,0-96,0-144c2.22-1.515,5.366-0.624,7.322-2.822
@@ -1721,8 +1722,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <svg class="cycle-js" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 612 792" width="612" height="727">
+                        <svg class="cycle-js" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" width="612" height="727">
                             <style type="text/css">
                                 .st1{fill:none;}
                             </style>
@@ -3678,7 +3678,7 @@
                                      </g>
                                          <rect class="st1" width="612" height="792"/>
                             </svg>
-                        </div>
+                    </div>
                 </div>
                 <div class="corner" id="bottomCorner">
                     <object data="./assets/bottomLeft.svg" type="image/svg+xml" class="cornerImage">
@@ -3686,12 +3686,12 @@
                     </object>
                 </div>
             </div>
-			<div id="artistName">
-				Sample Name
-			</div>
+            <div id="artistName">
+                <h2>Sample Name</h2>
+            </div>
             <div class="morePages">
                 <div class="arrow" onclick="plusDivs(-1)">
-                      <a href="#"><object data="./assets/leftArrow.svg" type="image/svg+xml">
+                    <a href="#"><object data="./assets/leftArrow.svg" type="image/svg+xml">
                         <img src="./assets/leftArrow.svg" alt="previous">
                     </object></a>
                 </div>
@@ -3703,17 +3703,17 @@
                         <img src="./assets/rightArrow.svg" alt="next">
                     </object></a>
                 </div>
-              </a>
             </div>
         </div>
 
         <div class="tools">
             <div class="colorWheel">
-                <img id="colorWheelImg" src="./assets/paintTEMP.png" alt="Color Wheel">
+                <img id="colorWheelImg" src="./assets/paint.png" alt="Color Wheel">
+                <img id="colorWheelImg2" src="./assets/spectrum.png">
             </div>
             <div class="buttons">
-               <div id="eraser">
-                   <svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <div id="eraser">
+                    <svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="Group-5-Copy" transform="translate(150.188307, 144.134902) rotate(181.000000) translate(-150.188307, -144.134902) translate(2.688307, 2.634902)" stroke="#1E2734" stroke-width="5">
                             <path d="M0,165.297854 C29.6081324,205.384045 16.6494794,175.209473 52.3746337,228.40142 C64.1363855,245.913744 72.6275691,265.507538 84.7694793,282.759716 C84.770171,282.760698 95.702732,274.341949 118.032044,257.145394 C142.27472,238.475294 169.403708,223.778304 193.857342,205.384045 C210.16951,193.113875 223.777679,177.507129 240.135693,165.297854 C255.172491,154.074707 272.991828,146.847099 287.771245,135.288701 C318.64756,111.141556 240.973344,-21.2315055 203.936233,2.93324427 C180.062834,18.5093707 168.031663,26.7256603 162.7752,30.7560793 C144.376481,44.8633861 123.155515,56.2034097 104.816015,70.3872497 C73.9050515,94.2939081 47.1312372,123.095633 18.2888483,149.449825 L0,165.297854 Z" id="Path-34"></path>
@@ -3723,7 +3723,7 @@
                         </g>
                     </g>
                 </svg>
-               </div>
+                </div>
                 <div id="back">
                     <svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -3731,8 +3731,8 @@
                         </g>
                     </svg>
                 </div>
-                    <div id="clear">
-                        <svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <div id="clear">
+                    <svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <text id="Clear" font-family="Gaegu-Regular, Gaegu" font-size="100" font-weight="normal" fill="#000000">
                                     <tspan x="43.25" y="167">Clear</tspan>
@@ -3740,16 +3740,16 @@
                                 <path d="M211.251676,57.9139741 C177.129613,48.722622 92.1262346,49.3114007 65.3873078,57.9139741 C47.5613567,63.6490231 39.219094,75.3162018 40.3605198,92.9155101 C38.9776701,116.060998 34.8529348,132.940141 27.9863141,143.552938 C17.6863829,159.472133 11.5350009,188.509514 48.1698434,203.482722 C84.8046859,218.455929 95.220402,238.220662 155.330022,243.509816 C215.439642,248.79897 242.589715,235.377792 259.378788,221.380114 C276.167862,207.382437 291.559607,167.522881 277.150542,117.314103 C262.741478,67.1053262 245.37374,67.1053262 211.251676,57.9139741 Z" id="Path-46" stroke="#000000" stroke-width="7" fill-rule="nonzero"></path>
                             </g>
                         </svg>
-                    </div>
+                </div>
             </div>
             <div id="pickedColor"></div>
             <canvas id="color-wheel-canvas"></canvas>
         </div>
 
     </div>
-    
+
     <canvas id="ch" class="canvas-history"></canvas>
 
-	<script type="text/javascript" src="./js/main-min.js"></script>
+    <script type="text/javascript" src="./js/main-min.js"></script>
 </body>
 </html>
