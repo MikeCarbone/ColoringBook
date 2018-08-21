@@ -75,7 +75,7 @@ object {
 }
 
 .page:hover {
-    cursor: url(assets/paintbrush.png), auto
+    cursor: url(../assets/paintbrush.png), auto
 }
 
 .morePages {
