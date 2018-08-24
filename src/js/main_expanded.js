@@ -11,6 +11,10 @@ var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
 let colorDisplay = document.getElementById("pickedColor");
 
+var grid = document.getElementById("grid");
+var pageGroup = document.getElementById("pageGroup");
+var viewAll = document.getElementById("viewAll");
+
 let artists;
 
 artists = [
@@ -60,6 +64,19 @@ function showDivs(n) {
   setEventListeners(j);
 }
 
+
+viewAll.addEventListener("click", showGrid);
+function showGrid() {
+    viewAll.innerHTML = "back";
+    pageGroup.style.display = 'none';
+    grid.style.display = 'flex';
+}
+back.addEventListener("click", hideGrid);
+function hideGrid() {
+    viewAll.innerHTML = "view all";
+    pageGroup.style.display = 'block';
+    grid.style.display = 'none';    
+}
 
 function initializeButtons(){
     backButton.addEventListener("click", function(){

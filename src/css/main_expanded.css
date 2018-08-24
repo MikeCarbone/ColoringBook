@@ -4,6 +4,8 @@ body {
     width: 96vw
 }
 
+.pageGroup{ display: block;}
+
 img,
 object,
 svg {
@@ -20,10 +22,10 @@ h2 {
 .logo {
     margin: 0 auto
 }
-#logoTitle{
+
+#logoTitle {
     width: 40%;
-    margin: 1rem;
-    
+    margin: 1rem
 }
 
 .heading {
@@ -39,7 +41,7 @@ h2 {
     flex-direction: row;
     justify-content: flex-end;
     position: relative;
-    margin-top: -1.5rem;
+    margin-top: -1.5rem
 }
 
 .words > * {
@@ -73,9 +75,24 @@ object {
     width: 84vw;
     margin: 0 auto
 }
+#grid{
+    width: 84vw;
+    height: 109vw;
+    margin: 0 auto;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+#grid img{
+    width: 19.5vw;
+    height: 25.1875vw;
+    border: #cff6fe 3px solid;
+    border-radius: 2px;
+}
 
 .page:hover {
-    cursor: url(../assets/paintbrush.png), auto
+    cursor: url(assets/paintbrush.png), auto
 }
 
 .morePages {
@@ -85,10 +102,10 @@ object {
     flex-flow: row
 }
 
-#artistName{ 
-    
+#artistName {
     font-family: 'Gaegu', cursive;
-    text-align: right;}
+    text-align: right
+}
 
 .arrow {
     width: 6vw
@@ -109,7 +126,7 @@ object {
     width: 90vw;
     margin: 0 auto;
     margin-left: -20vw;
-    order: 1;
+    order: 1
 }
 
 #color-wheel-canvas:hover {
@@ -120,7 +137,7 @@ object {
     margin: 0 auto;
     width: 50%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .buttons {
@@ -129,7 +146,7 @@ object {
     display: flex;
     flex-flow: row;
     order: 2;
-    margin-top: 18vw;
+    margin-top: 18vw
 }
 
 .buttons object {
@@ -145,7 +162,11 @@ object {
     left: 0;
     z-index: -100
 }
-#colorWheelImg{ display: none; }
+
+#colorWheelImg {
+    display: none
+}
+.viewAll{ text-align: center; }
 
 @media screen and (min-width:768px) {
     h1 {
@@ -157,7 +178,7 @@ object {
     .heading {
         display: block;
         position: absolute;
-        width: 100%;
+        width: 100%
     }
     .main {
         display: flex;
@@ -168,11 +189,12 @@ object {
     .tools {
         width: 16.5rem;
         margin-top: 7rem;
-        display: block;
+        display: block
     }
-    .buttons{ margin-top: 0;}
+    .buttons {
+        margin-top: 0
+    }
     .colorWheel {
-        display: block;
         width: 16.25rem;
         margin: 0 auto
     }
@@ -181,10 +203,15 @@ object {
     }
     #color-wheel-canvas {
         width: 25%;
-        margin: 0 auto;
+        margin: 0 auto
     }
-    #colorWheelImg{ display: block; }
-    #colorWheelImg2{ display: none; }
+    #colorWheelImg,
+    .colorWheel {
+        display: block
+    }
+    #colorWheelImg2 {
+        display: none
+    }
     .buttons {
         width: 14.375rem
     }
@@ -211,6 +238,15 @@ object {
     }
     .page:hover {
         cursor: url(assets/paintbrush.png), auto
+    }
+    #grid{
+       width: 26.25rem; 
+        height: 34rem;
+        margin: 2.2rem 2.2rem 2.2rem 1.6rem;
+    }
+    #grid img{
+        width: 5.8rem;
+        height: 7.492rem;
     }
     .morePages {
         width: 25rem;
@@ -245,6 +281,14 @@ object {
     .page {
         width: 34.5rem
     }
+    #grid{
+        width: 34.5rem;
+        height: 44.8135rem;
+    }
+    #grid img{
+        width: 7.5rem;
+        height: 9.688rem;
+    }
     .tools {
         margin-right: 2rem
     }
@@ -268,6 +312,175 @@ object {
     #color-wheel-canvas {
         width: 20%
     }
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio],
+legend {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+[hidden],
+template {
+    display: none
 }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
