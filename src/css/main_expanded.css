@@ -218,13 +218,6 @@ object {
         width: 25%;
         margin: 0 auto
     }
-    #colorWheelImg,
-    .colorWheel {
-        display: block
-    }
-    #colorWheelImg2 {
-        display: none
-    }
 
     #mobile-color-wheel-canvas{
         display: none;
