@@ -11,6 +11,10 @@ var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
 let colorDisplay = document.getElementById("pickedColor");
 
+var grid = document.getElementById("grid");
+var pageGroup = document.getElementById("pageGroup");
+var viewAll = document.getElementById("viewAll");
+
 let artists;
 
 artists = [
@@ -61,6 +65,19 @@ function showDivs(n) {
 }
 
 
+viewAll.addEventListener("click", showGrid);
+function showGrid() {
+    viewAll.innerHTML = "back";
+    pageGroup.style.display = 'none';
+    grid.style.display = 'flex';
+}
+back.addEventListener("click", hideGrid);
+function hideGrid() {
+    viewAll.innerHTML = "view all";
+    pageGroup.style.display = 'block';
+    grid.style.display = 'none';    
+}
+
 function initializeButtons(){
     backButton.addEventListener("click", function(){
         console.log('Undoing...');
@@ -71,6 +88,7 @@ function initializeButtons(){
 
     eraserButton.addEventListener("click", function(){
         chosenColor = "#FFFFFF";
+        colorDisplay.style.backgroundColor = chosenColor;
     });
 
     clearButton.addEventListener("click", function(){
@@ -130,14 +148,15 @@ function setUndo(el){
     }
 }
 
-function instantiateWheel(){
+function instantiateColorCanvases(imgId, canvasId){
     let wheelCanvas;
-    
+    let img = document.getElementById(imgId);
+
     //Makes sure canvas for the color wheel is instantiated
     var colorWheelCanvasInstantiation = new Promise((resolve, reject) =>{
-        var c = document.getElementById("color-wheel-canvas");
+        var c = document.getElementById(canvasId);
         var ctx = c.getContext("2d");
-        var img = document.getElementById("colorWheelImg");
+        
         var rect = img.getBoundingClientRect();
         c.width = rect.width;
         c.height = rect.height;
@@ -149,18 +168,17 @@ function instantiateWheel(){
 
     //What to do after color wheel canvas is instantiated
     colorWheelCanvasInstantiation.then(function(result) {
-        //console.log(result);
-        document.getElementById("colorWheelImg").style.display = "none";
-        document.getElementById("color-wheel-canvas").addEventListener("click", function(e){
-            colorPick(e);
+        img.style.display = "none";
+        result.addEventListener("click", function(e){
+            colorPick(e, result);
         });
 
     }, function(err){
         console.log(err);
-    });
+    });  
 }
 
-function colorPick(e){
+function colorPick(e, colorWheelCanvas){
 
     //Converts the RGB data to hex from the page data
     function rgbToHex(r, g, b) {
@@ -169,7 +187,7 @@ function colorPick(e){
         return ((r << 16) | (g << 8) | b).toString(16);
     }
 
-    var colorWheelCanvas = document.getElementById("color-wheel-canvas");
+    //var colorWheelCanvas = document.getElementById("color-wheel-canvas");
     var context = colorWheelCanvas.getContext('2d');
 
     function getMousePos( canvas, evt ) {
@@ -251,8 +269,10 @@ function updateCanvas(){
 }
 
 //Prepares the download link after site is loaded
-document.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
     updateCanvas();
-    instantiateWheel();
+    instantiateColorCanvases("colorWheelImg", "color-wheel-canvas");
+    instantiateColorCanvases("colorWheelImg2", "mobile-color-wheel-canvas");
     initializeButtons();
+    console.log('All page content loaded');
 });
