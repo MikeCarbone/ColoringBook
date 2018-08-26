@@ -28,14 +28,14 @@
         </div>
         <div class="spacing"></div>
         <div class="words">
-            <!-- <h2>print</h2> -->
+            <h2>print</h2>
             <h2><a href="" id="dl" download="Coloring-Book-Img">save</a></h2>
-            <!-- <h2>share</h2> -->
+            <h2>share</h2>
         </div>
     </div>
     <div class="spacing"></div>
     <div class="main">
-        <div class="pageGroup">
+        <div class="pageGroup" id="pageGroup">
             <div class="picBorder">
                 <div class="corner" id="topCorner">
                     <object data="./assets/topRight.svg" type="image/svg+xml" class="cornerImage">
@@ -18232,21 +18232,44 @@
             </div>
             <div class="morePages">
                 <div class="arrow" onclick="plusDivs(-1)">
-                    <object data="./assets/leftArrow.svg" type="image/svg+xml">
+                    <a href="#"><object data="./assets/leftArrow.svg" type="image/svg+xml">
                         <img src="./assets/leftArrow.svg" alt="previous">
-                    </object>
+                    </object></a>
                 </div>
                 <div class="morePics">
                     <h2> More pictures to color! </h2>
                 </div>
                 <div class="arrow" onclick="plusDivs(1)">
-                    <object data="./assets/rightArrow.svg" type="image/svg+xml">
+                    <a href="#"><object data="./assets/rightArrow.svg" type="image/svg+xml">
                         <img src="./assets/rightArrow.svg" alt="next">
-                    </object>
+                    </object></a>
                 </div>
             </div>
+            <div class="viewAll"><h2 id="viewAll">View All</h2></div>
+        </div>
+        
+        
+        <div class="grid" id="grid">
+            <img src="assets/thumbnails/thumb1.jpg" id="thumb1">
+            <img src="assets/thumbnails/thumb2.jpg" id="thumb2">
+            <img src="assets/thumbnails/thumb3.jpg" id="thumb3">
+            <img src="assets/thumbnails/thumb4.jpg" id="thumb4">
+            <img src="assets/thumbnails/thumb5.jpg" id="thumb5">
+            <img src="assets/thumbnails/thumb6.png" id="thumb6">
+            <img src="assets/thumbnails/thumb7.jpg" id="thumb7">
+            <img src="assets/thumbnails/thumb8.jpg" id="thumb8">
+            <img src="assets/thumbnails/thumb9.jpg" id="thumb9">
+            <img src="assets/thumbnails/thumb10.jpg" id="thumb10">
+            <img src="assets/thumbnails/thumb11.png" id="thumb11">
+            <img src="assets/thumbnails/thumb12.jpg" id="thumb12">
+            <img src="assets/thumbnails/thumb13.jpg" id="thumb13">
+            <img src="assets/thumbnails/thumb14.jpg" id="thumb14">
+            <img src="assets/thumbnails/thumb15.jpg" id="thumb15">
+            <img src="assets/thumbnails/thumb16.jpg" id="thumb16">
         </div>
 
+        
+        
         <div class="tools">
             <div class="colorWheel">
                 <img id="colorWheelImg" src="./assets/paint.png" alt="Color Wheel">
