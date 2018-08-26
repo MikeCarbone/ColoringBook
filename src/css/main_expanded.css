@@ -100,7 +100,7 @@ object {
 }
 
 .colorWheel img {
-    margin-top: 20vw
+    margin-top: 20vw;
 }
 
 #color-wheel-canvas,
@@ -112,13 +112,17 @@ object {
     order: 1;
 }
 
-#color-wheel-canvas:hover {
+.color-canvas:hover {
     cursor: crosshair
 }
 
+#color-wheel-canvas{
+    display: none;
+}
+
 .tools {
-    margin: 0 auto;
-    width: 50%;
+    margin: 15px auto 0 auto;
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -145,7 +149,19 @@ object {
     left: 0;
     z-index: -100
 }
-#colorWheelImg{ display: none; }
+
+#pickedColor{
+    height: 50px;
+}
+
+#pickedColor {
+    background-color: #1074b0;
+    border: 3px solid #000;
+    border-radius: 25px;
+    height: 75px;
+    margin: 25px auto;
+    width: 75px
+}
 
 @media screen and (min-width:768px) {
     h1 {
@@ -179,12 +195,17 @@ object {
     .colorWheel img {
         width: 16.5rem
     }
+
     #color-wheel-canvas {
+        display: block;
         width: 25%;
         margin: 0 auto;
     }
-    #colorWheelImg{ display: block; }
-    #colorWheelImg2{ display: none; }
+
+    #mobile-color-wheel-canvas{
+        display: none;
+    }
+   
     .buttons {
         width: 14.375rem
     }
@@ -221,14 +242,6 @@ object {
     }
     .morePics {
         width: 20rem
-    }
-    #pickedColor {
-        background-color: #1074b0;
-        border: 3px solid #000;
-        border-radius: 25px;
-        height: 75px;
-        margin: 25px auto;
-        width: 75px
     }
 }
 
