@@ -4,6 +4,9 @@ let chosenColor = '1074B0'; //Default color
 const clearButton = document.getElementById("clear").children[0];
 const eraserButton = document.getElementById("eraser");
 const backButton = document.getElementById("back");
+const rightArrow = document.getElementById("right-arrow");
+const leftArrow = document.getElementById("left-arrow");
+
 let priorMoves = [];
 let backCount = 0;
 var slideIndex = 1;
@@ -99,16 +102,7 @@ function initializeButtons(){
         console.log('Canvas cleared!');
     });
 
-    let rightArrow = document.getElementById("right-arrow");
-    let leftArrow = document.getElementById("left-arrow");
-
-    console.log('BackArrow: ', leftArrow);
-    console.log('forwardArrow: ', rightArrow);
-    leftArrow.addEventListener("click", function(){
-        console.log('hello');
-        plusDivs(-1);
-    });
-    
+    leftArrow.addEventListener("click", function(){plusDivs(-1);});
     rightArrow.addEventListener("click", function(){plusDivs(1)});
 }
 
