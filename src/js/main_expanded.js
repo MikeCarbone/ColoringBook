@@ -6,8 +6,6 @@ const eraserButton = document.getElementById("eraser");
 const backButton = document.getElementById("back");
 let priorMoves = [];
 let backCount = 0;
-var backArrow = document.getElementsByClassName("arrow")[0];
-var forwardArrow = document.getElementsByClassName("arrow")[1];
 var slideIndex = 1;
 let colorDisplay = document.getElementById("pickedColor");
 
@@ -100,15 +98,18 @@ function initializeButtons(){
         updateCanvas();
         console.log('Canvas cleared!');
     });
+
+    let rightArrow = document.getElementById("right-arrow");
+    let leftArrow = document.getElementById("left-arrow");
+
+    console.log('BackArrow: ', leftArrow);
+    console.log('forwardArrow: ', rightArrow);
+    leftArrow.addEventListener("click", function(){
+        console.log('hello');
+        plusDivs(-1);
+    });
     
-    // console.log('BackArrow: ', backArrow);
-    // console.log('forwardArrow: ', forwardArrow);
-    // backArrow.addEventListener("click", function(){
-    //     console.log('hello');
-    //     plusDivs(-1);
-    // });
-    
-    // forwardArrow.addEventListener("click", function(){plusDivs(1)});
+    rightArrow.addEventListener("click", function(){plusDivs(1)});
 }
 
 function setEventListeners(j){

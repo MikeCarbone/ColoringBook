@@ -179,6 +179,16 @@ object {
     width: 75px
 }
 
+.noclick{
+    pointer-events: none;
+}
+
+#right-arrow, #left-arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 @media screen and (min-width:768px) {
     h1 {
         font-size: 3.375rem
