@@ -48,6 +48,10 @@ h2 {
     margin-right: 5%
 }
 
+.words h2 a{
+    font-size: 1.75rem;
+}
+
 .corner {
     margin: 0;
     border: 0;
@@ -96,10 +100,10 @@ object {
 }
 
 .morePages {
-    margin: 3vw auto 0;
-    width: 64vw;
+    margin: 0 auto;
+    width: 85vw;
     display: flex;
-    flex-flow: row
+    flex-flow: row;
 }
 
 #artistName {
@@ -108,12 +112,16 @@ object {
 }
 
 .arrow {
-    width: 6vw
+    width: 15vw;
 }
 
 .morePics {
     width: 50vw;
     text-align: center
+}
+
+.morePics h2{
+    font-size: 1.7rem;
 }
 
 .colorWheel img {
@@ -147,12 +155,11 @@ object {
 }
 
 .buttons {
-    margin: 2vw auto;
+    margin: 25px auto;
     width: 50vw;
     display: flex;
     flex-flow: row;
-    order: 2;
-    margin-top: 18vw
+    order: 3;
 }
 
 .buttons object {
@@ -175,10 +182,11 @@ object {
 #pickedColor {
     background-color: #1074b0;
     border: 3px solid #000;
-    border-radius: 25px;
-    height: 75px;
-    margin: 25px auto;
-    width: 75px
+    border-radius: 6px;
+    height: 30px;
+    margin: 25px auto 20px auto;
+    order: 2;
+    width: 175px;
 }
 
 .noclick{
@@ -189,6 +197,11 @@ object {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+#mobile-color-wheel-canvas{
+    height: 200px;
+    order: 1;
 }
 
 @media screen and (min-width:768px) {
@@ -225,6 +238,11 @@ object {
         width: 16.5rem
     }
 
+    #colorWheelImg2{
+        height: 300px;
+        min-height: 250px;
+    }
+
     #color-wheel-canvas {
         display: block;
         /*width: 25%;*/
@@ -233,6 +251,10 @@ object {
 
     #mobile-color-wheel-canvas{
         display: none;
+    }
+
+    #pickedColor {
+        margin: 25px auto 35px auto;
     }
    
     .buttons {
