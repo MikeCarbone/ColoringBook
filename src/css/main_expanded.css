@@ -122,11 +122,13 @@ object {
 
 #color-wheel-canvas,
 .colorWheel img {
-    position: absolute;
-    width: 90vw;
+    display: block;
+    /*position: absolute;*/
+    /*width: 90vw;*/
     margin: 0 auto;
-    margin-left: -20vw;
-    order: 1
+    /*margin-left: -20vw;*/
+    /*order: 1;*/
+    width: 80%;
 }
 
 .color-canvas:hover {
@@ -225,7 +227,7 @@ object {
 
     #color-wheel-canvas {
         display: block;
-        width: 25%;
+        /*width: 25%;*/
         margin: 0 auto
     }
 
@@ -323,7 +325,7 @@ object {
         margin-left: 0
     }
     #color-wheel-canvas {
-        width: 20%
+        /*width: 20%*/
     }
 }
 
