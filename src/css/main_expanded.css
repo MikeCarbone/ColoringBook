@@ -100,7 +100,7 @@ object {
 }
 
 .page:hover {
-    cursor: url(assets/paintbrush.png), auto
+    cursor: url(../assets/paintbrush.svg), auto
 }
 
 .morePages {
@@ -112,7 +112,8 @@ object {
 
 #artistName {
     font-family: 'Gaegu', cursive;
-    text-align: right
+    text-align: right;
+    font-size: 1.25rem;
 }
 
 .arrow {
@@ -301,7 +302,7 @@ object {
         width: 26.25rem
     }
     .page:hover {
-        cursor: url(assets/paintbrush.png), auto
+        cursor: url(../assets/paintbrush.svg), auto
     }
     #grid{
        width: 26.25rem; 
