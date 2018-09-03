@@ -204,8 +204,23 @@ object {
 }
 
 #mobile-color-wheel-canvas{
+    cursor: crosshair;
     height: 200px;
     order: 1;
+}
+
+#color-wheel-canvas{
+    cursor: crosshair;
+}
+
+.interface-button{
+    cursor: pointer;
+    transition: .25s all ease-in-out;
+}
+
+.interface-button:hover{
+    transform: scale(1.25);
+    transition: .25s all ease-in-out;
 }
 
 @media screen and (min-width:768px) {
