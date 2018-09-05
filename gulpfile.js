@@ -33,7 +33,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('copy_assets', function() {
-    return gulp.src('./src/assets/*')
+    return gulp.src('./src/assets/**/*')
     .pipe(gulp.dest('./build/assets/'))
 });
 

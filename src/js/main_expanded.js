@@ -12,9 +12,9 @@ let backCount = 0;
 var slideIndex = 1;
 let colorDisplay = document.getElementById("pickedColor");
 
-// var grid = document.getElementById("grid");
-// var pageGroup = document.getElementById("pageGroup");
-// var viewAll = document.getElementById("viewAll");
+var grid = document.getElementById("grid");
+var pageGroup = document.getElementById("pageGroup");
+var viewAll = document.getElementById("viewAll");
 
 let artists;
 
@@ -56,8 +56,8 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
   document.getElementById("artistName").innerHTML = artists[slideIndex-1];
-  //console.log('SLIDE INDEX: ', slideIndex);
-  //console.log(x);
+  console.log('SLIDE INDEX: ', slideIndex);
+  console.log(x);
   let j = slideIndex - 1;
   //console.log('J: ', j);
 
@@ -66,18 +66,51 @@ function showDivs(n) {
 }
 
 
-// viewAll.addEventListener("click", showGrid);
-// function showGrid() {
-//     viewAll.innerHTML = "back";
-//     pageGroup.style.display = 'none';
-//     grid.style.display = 'flex';
-// }
-// back.addEventListener("click", hideGrid);
-// function hideGrid() {
-//     viewAll.innerHTML = "view all";
-//     pageGroup.style.display = 'block';
-//     grid.style.display = 'none';    
-// }
+
+viewAll.addEventListener("click", showGrid);
+function showGrid() {
+    slideIndex = 1;
+    viewAll.innerHTML = "back";
+    pageGroup.style.display = 'none';
+    grid.style.display = 'flex';
+}
+back.addEventListener("click", hideGrid);
+function hideGrid(n) {
+    viewAll.innerHTML = "View all";
+    pageGroup.style.display = 'block';
+    grid.style.display = 'none'; 
+    plusDivs(n-1);
+}
+
+thumb1.addEventListener("click", function(){hideGrid(1)});
+thumb2.addEventListener("click", function(){hideGrid(2)});
+thumb3.addEventListener("click", function(){hideGrid(3)});
+thumb4.addEventListener("click", function(){hideGrid(4)});
+thumb5.addEventListener("click", function(){hideGrid(5)});
+thumb6.addEventListener("click", function(){hideGrid(6)});
+thumb7.addEventListener("click", function(){hideGrid(7)});
+thumb8.addEventListener("click", function(){hideGrid(8)});
+thumb9.addEventListener("click", function(){hideGrid(9)});
+thumb10.addEventListener("click", function(){hideGrid(10)});
+thumb11.addEventListener("click", function(){hideGrid(11)});
+thumb12.addEventListener("click", function(){hideGrid(12)});
+thumb13.addEventListener("click", function(){hideGrid(13)});
+thumb14.addEventListener("click", function(){hideGrid(14)});
+thumb15.addEventListener("click", function(){hideGrid(15)});
+thumb16.addEventListener("click", function(){hideGrid(16)});
+// thumb2.addEventListener("click", function(){showImage(2)});
+// thumb3.addEventListener("click", function(){showImage(3)});
+// thumb4.addEventListener("click", function(){showImage(4)});
+
+
+function showImage(n) {
+    grid.style.display = 'none';
+    pageGroup.style.display = 'block';
+    viewAll.innerHTML = "View all";
+    showDivs(n);
+    console.log(n);
+    
+}
 
 function initializeButtons(){
     backButton.addEventListener("click", function(){
