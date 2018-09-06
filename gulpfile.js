@@ -4,8 +4,8 @@ const watch = require('gulp-watch');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
-const csso = require('gulp-csso');
 const babel = require('gulp-babel');
+let cleanCSS = require('gulp-clean-css');
 
 
 // Default gulp task to run
@@ -14,7 +14,7 @@ gulp.task('default', ['serve']);
 //process css files
 gulp.task('css', function () {
   return gulp.src('./src/css/*.css')
-    .pipe(csso())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(concat('main.css'))
     .pipe(gulp.dest('./build/css/'));
 });
