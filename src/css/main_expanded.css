@@ -1,11 +1,14 @@
 body {
     background-color: #fff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2378e7ff' fill-opacity='0.75'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    width: 96vw;
+    width: 96vw
 }
 
+.pageGroup{ display: block;}
+
 img,
-object, svg {
+object,
+svg {
     width: 100%;
     height: auto
 }
@@ -16,8 +19,17 @@ h2 {
     margin: 0
 }
 
+path{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .logo {
     margin: 0 auto
+}
+
+#logoTitle {
+    width: 40%;
+    margin: 1rem
 }
 
 .heading {
@@ -32,11 +44,16 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: relative
+    position: relative;
+    margin-top: -1.5rem
 }
 
 .words > * {
     margin-right: 5%
+}
+
+.words h2 a{
+    font-size: 1.75rem;
 }
 
 .corner {
@@ -66,20 +83,41 @@ object {
     width: 84vw;
     margin: 0 auto
 }
+#grid{
+    width: 84vw;
+    height: 109vw;
+    margin: 0 auto;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+#grid img{
+    width: 19.5vw;
+    height: 25.1875vw;
+    border: #cff6fe 3px solid;
+    border-radius: 2px;
+}
 
 .page:hover {
-    cursor: url(assets/paintbrush.png), auto
+    cursor: url(../assets/paintbrush.svg), auto
 }
 
 .morePages {
-    margin: 3vw auto 0;
-    width: 64vw;
+    margin: 0 auto;
+    width: 85vw;
     display: flex;
-    flex-flow: row
+    flex-flow: row;
+}
+
+#artistName {
+    font-family: 'Gaegu', cursive;
+    text-align: right;
+    font-size: 1.25rem;
 }
 
 .arrow {
-    width: 6vw
+    width: 15vw;
 }
 
 .morePics {
@@ -87,39 +125,103 @@ object {
     text-align: center
 }
 
-.colorWheel img{
-    position: absolute;
-    width: 50%;
-    margin-bottom: 10vw;
+.morePics h2{
+    font-size: 1.7rem;
+}
+
+.colorWheel img {
     margin-top: 20vw;
-
 }
 
-
-#color-wheel-canvas {
-   position: absolute;
-    width: 50%;
-    margin-bottom: 10vw;
+#color-wheel-canvas,
+.colorWheel img {
+    display: block;
+    /*position: absolute;*/
+    /*width: 90vw;*/
+    margin: 0 auto;
+    /*margin-left: -20vw;*/
+    /*order: 1;*/
+    width: 80%;
 }
 
-#color-wheel-canvas:hover {
+.color-canvas:hover {
     cursor: crosshair
 }
-.tools{
-    margin: 0 auto;
-    width: 50%;
+
+#color-wheel-canvas{
+    display: none;
 }
+
+.tools {
+    margin: 15px auto 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column
+}
+
 .buttons {
-    margin: 2vw auto;
+    margin: 25px auto;
     width: 50vw;
     display: flex;
-    flex-flow: row
+    flex-flow: row;
+    order: 3;
 }
 
 .buttons object {
     width: 12vw;
     height: 12vw;
     margin-left: 10vw
+}
+
+.canvas-history {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: -100
+}
+
+
+.viewAll{ text-align: center; }
+
+#pickedColor {
+    background-color: #1074b0;
+    border: 3px solid #000;
+    border-radius: 6px;
+    height: 30px;
+    margin: 25px auto 20px auto;
+    order: 2;
+    width: 175px;
+}
+
+.noclick{
+    pointer-events: none;
+}
+
+#right-arrow, #left-arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#mobile-color-wheel-canvas{
+    cursor: crosshair;
+    height: 200px;
+    order: 1;
+}
+
+#color-wheel-canvas{
+    cursor: crosshair;
+}
+
+.interface-button{
+    cursor: pointer;
+    transition: .25s all ease-in-out;
+}
+
+.interface-button:hover{
+    transform: scale(1.25);
+    transition: .25s all ease-in-out;
 }
 
 @media screen and (min-width:768px) {
@@ -131,7 +233,8 @@ object {
     }
     .heading {
         display: block;
-        position: absolute
+        position: absolute;
+        width: 100%
     }
     .main {
         display: flex;
@@ -141,17 +244,39 @@ object {
     }
     .tools {
         width: 16.5rem;
-        margin-top: 7rem
+        margin-top: 7rem;
+        display: block
+    }
+    .buttons {
+        margin-top: 0
     }
     .colorWheel {
-        display: block;
         width: 16.25rem;
-        margin: 0 auto;
+        margin: 0 auto
     }
-    .colorWheel img{
-        width: 16.5rem;
-/*        margin-left: 1rem;*/
+    .colorWheel img {
+        width: 16.5rem
     }
+
+    #colorWheelImg2{
+        height: 300px;
+        min-height: 250px;
+    }
+
+    #color-wheel-canvas {
+        display: block;
+        /*width: 25%;*/
+        margin: 0 auto
+    }
+
+    #mobile-color-wheel-canvas{
+        display: none;
+    }
+
+    #pickedColor {
+        margin: 25px auto 35px auto;
+    }
+   
     .buttons {
         width: 14.375rem
     }
@@ -177,7 +302,16 @@ object {
         width: 26.25rem
     }
     .page:hover {
-        cursor: url(assets/paintbrush.png), auto
+        cursor: url(../assets/paintbrush.svg), auto
+    }
+    #grid{
+       width: 26.25rem; 
+        height: 34rem;
+        margin: 2.2rem 2.2rem 2.2rem 1.6rem;
+    }
+    #grid img{
+        width: 5.8rem;
+        height: 7.492rem;
     }
     .morePages {
         width: 25rem;
@@ -188,14 +322,6 @@ object {
     }
     .morePics {
         width: 20rem
-    }
-    #pickedColor{
-        background-color: #1074B0;
-        border: 3px solid black;
-        border-radius: 25px;
-        height: 75px;
-        margin: 25px auto;
-        width: 75px;
     }
 }
 
@@ -212,6 +338,14 @@ object {
     .page {
         width: 34.5rem
     }
+    #grid{
+        width: 34.5rem;
+        height: 44.8135rem;
+    }
+    #grid img{
+        width: 7.5rem;
+        height: 9.688rem;
+    }
     .tools {
         margin-right: 2rem
     }
@@ -219,8 +353,8 @@ object {
     .tools {
         width: 20.25rem
     }
-    .colorWheel img{
-        margin-left: 1rem;
+    .colorWheel img {
+        margin-left: 1rem
     }
     .buttons {
         width: 15rem
@@ -232,6 +366,347 @@ object {
     #eraser {
         margin-left: 0
     }
+    #color-wheel-canvas {
+        /*width: 20%*/
+    }
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio],
+legend {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+[hidden],
+template {
+    display: none
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio],
+legend {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+[hidden],
+template {
+    display: none
 }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

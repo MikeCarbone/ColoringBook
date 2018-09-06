@@ -1,6 +1,6 @@
 # Color Time
 
-View this live: [http://hannahmystic.com/colortime/index.html](http://hannahmystic.com/colortime/index.html)
+View this live: [https://carbonology.github.io/coloringbook/build/index.html](https://carbonology.github.io/coloringbook/build/index.html)
 
 ## Want to run this locally?
 
