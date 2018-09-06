@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 const csso = require('gulp-csso');
+const babel = require('gulp-babel');
 
 
 // Default gulp task to run
@@ -21,19 +22,21 @@ gulp.task('css', function () {
 // process js files
 gulp.task('js', function () {
   return gulp.src('./src/js/*.js')
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
     .pipe(concat('main.js'))
-    .pipe(minify())
+    .pipe(minify({noSource:true}))    
     .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('html', function() {
     return gulp.src('./src/index.html')
     .pipe(gulp.dest('./build/'))
-
 });
 
 gulp.task('copy_assets', function() {
-    return gulp.src('./src/assets/*')
+    return gulp.src('./src/assets/**/*')
     .pipe(gulp.dest('./build/assets/'))
 });
 
