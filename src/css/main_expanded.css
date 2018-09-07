@@ -28,7 +28,7 @@ path{
 }
 
 #logoTitle {
-    width: 40%;
+    width: 95%;
     margin: 1rem
 }
 
@@ -85,7 +85,7 @@ object {
 }
 #grid{
     width: 84vw;
-    height: 109vw;
+    height: auto;
     margin: 0 auto;
     display: none;
     flex-flow: row wrap;
@@ -95,6 +95,7 @@ object {
 #grid img{
     width: 19.5vw;
     height: 25.1875vw;
+    margin: 0.5rem;
     border: #cff6fe 3px solid;
     border-radius: 2px;
 }
@@ -106,8 +107,10 @@ object {
 .morePages {
     margin: 0 auto;
     width: 85vw;
+    padding: 1.25rem 0;
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
 }
 
 #artistName {
@@ -318,7 +321,7 @@ object {
         margin-top: 2rem
     }
     .arrow {
-        width: 2.25rem
+        width: 3rem;
     }
     .morePics {
         width: 20rem
