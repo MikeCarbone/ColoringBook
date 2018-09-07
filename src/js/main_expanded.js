@@ -40,7 +40,7 @@ artists = [
 showDivs(slideIndex);
 
 function plusDivs(n) {
-    console.log('plus divs added');
+    console.log('Adding one');
     showDivs(slideIndex += n);
     updateCanvas();
 }
@@ -59,7 +59,7 @@ function showDivs(n) {
   console.log('SLIDE INDEX: ', slideIndex);
   console.log(x);
   let j = slideIndex - 1;
-  //console.log('J: ', j);
+  console.log('Slide index: ', slideIndex);
 
     
   setEventListeners(j);
@@ -74,12 +74,15 @@ function showGrid() {
     pageGroup.style.display = 'none';
     grid.style.display = 'flex';
 }
-back.addEventListener("click", hideGrid);
+
 function hideGrid(n) {
     viewAll.innerHTML = "View All Pictures";
     pageGroup.style.display = 'block';
     grid.style.display = 'none'; 
     plusDivs(n-1);
+    priorMoves = [];
+    console.log('new prior: ', priorMoves);
+    console.log(n - 1);
 }
 
 thumb1.addEventListener("click", function(){hideGrid(1)});
@@ -98,23 +101,17 @@ thumb13.addEventListener("click", function(){hideGrid(13)});
 thumb14.addEventListener("click", function(){hideGrid(14)});
 thumb15.addEventListener("click", function(){hideGrid(15)});
 thumb16.addEventListener("click", function(){hideGrid(16)});
-// thumb2.addEventListener("click", function(){showImage(2)});
-// thumb3.addEventListener("click", function(){showImage(3)});
-// thumb4.addEventListener("click", function(){showImage(4)});
-
 
 function showImage(n) {
     grid.style.display = 'none';
     pageGroup.style.display = 'block';
     viewAll.innerHTML = "View all";
     showDivs(n);
-    console.log(n);
-    
 }
 
 function initializeButtons(){
     backButton.addEventListener("click", function(){
-        console.log('Undoing...');
+        // console.log('Undoing...');
         priorMoves[backCount].el.style.fill = priorMoves[backCount].fill;
         backCount += 1;
         updateCanvas();
@@ -140,12 +137,11 @@ function initializeButtons(){
 }
 
 function setEventListeners(j){
-    //console.log(j);
     paths = document.getElementsByClassName("cycle-js")[j].getElementsByTagName("path");
-   // console.log(paths);
 
     //Listens for a click on each path
     for (let value of paths){
+        value.style.fill = value.getAttribute('fill');
         value.addEventListener("click", function(){
             //Makes sure the path isnt an outline
             if (value.getAttribute('fill') == '#FFFFFF') {
