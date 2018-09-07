@@ -76,7 +76,7 @@ function showGrid() {
 }
 back.addEventListener("click", hideGrid);
 function hideGrid(n) {
-    viewAll.innerHTML = "View all";
+    viewAll.innerHTML = "View All Pictures";
     pageGroup.style.display = 'block';
     grid.style.display = 'none'; 
     plusDivs(n-1);
