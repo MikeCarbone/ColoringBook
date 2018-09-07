@@ -190,7 +190,10 @@ object {
 }
 
 
-.viewAll{ text-align: center; }
+.viewAll{ 
+    cursor: pointer;
+    text-align: center;
+}
 
 #pickedColor {
     background-color: #1074b0;
