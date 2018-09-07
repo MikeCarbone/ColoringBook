@@ -15,7 +15,7 @@ svg {
 
 h2 {
     font-family: 'Gaegu', cursive;
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 0
 }
 
@@ -24,7 +24,7 @@ h2 {
 }
 
 #logoTitle {
-    width: 40%;
+    width: 80%;
     margin: 1rem
 }
 
@@ -39,14 +39,22 @@ h2 {
 .words {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
-    margin-top: -1.5rem
+    margin-top: -2.5rem
 }
 
 .words > * {
-    margin-right: 5%
+    margin-right: 2%
 }
+
+#eraser, #back, #clear, #save {
+
+    padding: 0.2em;
+    width: 100%;
+    cursor: pointer;
+}
+
 
 .corner {
     margin: 0;
@@ -145,18 +153,18 @@ object {
 }
 
 .buttons {
-    margin: 2vw auto;
+    /* margin: 2vw auto; */
     width: 50vw;
     display: flex;
     flex-flow: row;
     order: 2;
-    margin-top: 18vw
+    margin-top: 10vw
 }
 
 .buttons object {
     width: 12vw;
     height: 12vw;
-    margin-left: 10vw
+
 }
 
 .canvas-history {
@@ -184,12 +192,17 @@ object {
         font-size: 3.375rem
     }
     h2 {
-        font-size: 2rem
+        font-size: 2rem;
     }
     .heading {
         display: block;
         position: absolute;
         width: 100%
+    }
+
+    #logoTitle {
+        width: 40%;
+        margin: 1rem
     }
     .main {
         display: flex;
@@ -224,11 +237,16 @@ object {
     }
    
     .buttons {
-        width: 14.375rem
+        width: 16rem;
     }
     .buttons object {
         width: 3.625rem;
         height: 3.625rem
+    }
+    
+    #save {
+    
+    margin-top: .5em;
     }
     .pageGroup {
         margin: 2.2rem 2.2rem 2.2rem 1.6rem
@@ -268,6 +286,11 @@ object {
     }
     .morePics {
         width: 20rem
+    }
+    
+    .words {
+        
+        justify-content: flex-end;
     }
 }
 
@@ -348,7 +371,9 @@ samp {
 }
 
 a {
-    background-color: transparent
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
 }
 
 abbr[title] {
