@@ -85,22 +85,12 @@ function hideGrid(n) {
     console.log(n - 1);
 }
 
-thumb1.addEventListener("click", function(){hideGrid(1)});
-thumb2.addEventListener("click", function(){hideGrid(2)});
-thumb3.addEventListener("click", function(){hideGrid(3)});
-thumb4.addEventListener("click", function(){hideGrid(4)});
-thumb5.addEventListener("click", function(){hideGrid(5)});
-thumb6.addEventListener("click", function(){hideGrid(6)});
-thumb7.addEventListener("click", function(){hideGrid(7)});
-thumb8.addEventListener("click", function(){hideGrid(8)});
-thumb9.addEventListener("click", function(){hideGrid(9)});
-thumb10.addEventListener("click", function(){hideGrid(10)});
-thumb11.addEventListener("click", function(){hideGrid(11)});
-thumb12.addEventListener("click", function(){hideGrid(12)});
-thumb13.addEventListener("click", function(){hideGrid(13)});
-thumb14.addEventListener("click", function(){hideGrid(14)});
-thumb15.addEventListener("click", function(){hideGrid(15)});
-thumb16.addEventListener("click", function(){hideGrid(16)});
+function initializeThumbnails(){
+    for (let i = 1; i < 17; i++){
+        let thumb = document.getElementById("thumb" + i);
+        thumb.addEventListener("click", function(){hideGrid(i)});
+    }
+}
 
 function showImage(n) {
     grid.style.display = 'none';
@@ -299,5 +289,6 @@ window.addEventListener("load", function(){
     instantiateColorCanvases("colorWheelImg", "color-wheel-canvas");
     instantiateColorCanvases("colorWheelImg2", "mobile-color-wheel-canvas");
     initializeButtons();
+    initializeThumbnails();
     console.log('All page content loaded');
 });
